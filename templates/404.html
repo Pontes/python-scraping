@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+<div class="row m-2 mt-4 mb-5 border-bottom">
+    <div class="col-md-12">
+        <h2>Rastreamento de Correios</h2>
+        <h3>Status do Rastreio: <strong>{{ code }}</strong></h3>
+        
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-6 m-0 text-center">
+            <h1>404 - ERROR</h1>
+            <h3>PÁGINA NÃO ENCONTRADA!<BR>
+            Você será redirecionado em 5 segundos!</h3>
+            <meta http-equiv="refresh" content="5; URL='/'"/>
+
+    </div>
+</div>
+
+{% endblock %}

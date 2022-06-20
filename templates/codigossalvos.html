@@ -1,0 +1,32 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+<div class="row m-2 mt-4 mb-5 border-bottom">
+    <div class="col-md-12">
+        <h2>Rastreamento de Correios</h2>
+        <h3>Códigos de Rastremento Armazenados: <strong>{{ code }}</strong></h3>
+        
+    </div>
+</div>
+
+{% for lt in listar %}
+<div class="row justify-content-center">
+    <div class="col-md-10  mb-4 p-2 border-bottom">        
+            Codigo de Rastreamento: <strong>{{ lt[0]}}</strong> <br>
+            Telefone:{{ lt[1]}} <br>
+            <strong>{{ lt[2]}}</strong><br>
+
+            <span class="d-inline-flex m-md-1">
+                <a href="/visualizar/{{lt[0]}}" class="btn btn-primary  me-2 align-items-start">
+                    <i class="bi bi-pin-map"></i> Visualizar</a>
+                <form method="POST" action="/excluir" onsubmit="return confirm ('Tem certeza que deseja excluir o código de rastreamento {{ lt[0]}}!?')">
+                    <input type="hidden" name="del-codigo" id="del-codigo" value="{{ lt[0] }}">
+                    <button class="btn btn-danger" type="submit"> <i class="bi bi-trash"></i> Remover</a> </button>
+                                   
+                </form>
+            </span>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+<div class="row m-2 mt-4 mb-5 border-bottom">
+    <div class="col-md-12">
+        <h2>Rastreamento de Correios</h2>
+        <h3>Status do Rastreio: <strong>{{ code }}</strong></h3>
+        
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-6 m-0">
+        {% for i in range(0, tam) %}
+            <div {% if "Status" in consulta[i]  and i != 0 %} class='  border-top  mt-2 pt-2 '{% endif %}>
+                    {{ consulta[i] }}
+            </div>
+            
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+    <div class="row m-2 mt-4 mb-5 border-bottom">
+        <div class="col-md-12">
+            <h2>Rastreamento de Correios</h2>
+            <p>Scraper para checar o estado e histórico de encomendas postais.</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center m-2">
+        <div class="col-md-10">
+
+            <form action="{{url_for('status')}}" method="post">
+                <div class="row mb-2 pb-2 border-bottom">
+                    <div class="col-md-6">
+                        <img src="{{ url_for('static',filename='imagens/thumb.svg')}}" class="img-svg me-2" alt="">
+                        <h2 class="mb-0">Acompanhe sua encomenda</h2>
+                        <p>Digite o código para rastreamento</p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Digite o código de rastreio</label>
+                            <input type="text" class="form-control" name="codigo_rastreio" id="codigo_rastreio" placeholder="AA123456789BR" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-2 mt-4 mb-4">
+                    <div class="col-md-6">
+                        <p>Você pode receber notificações via sms sobre o status do objeto.</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="sms1" name="sms1" onclick="habilitar()">
+                            <label class="form-check-label" for="sms1">
+                              Autorizo o recebimento de sms
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Nº do Telefone</label>
+                            <input type="text" class="form-control" name="telefone" id="telefone" placeholder="+55 21 00000-0000" maxlength="16" disabled required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-pin-map"></i> Rastrear</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+
+{% endblock %}
