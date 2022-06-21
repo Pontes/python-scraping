@@ -21,13 +21,13 @@ class sms:
     ## Inicialização da class sms pra autencicação da conta e do token do twilio
     def __init__(self):
         self.__account_sid = "Coloquei seu codigo aqui"
-        self.__auth_token = "coloque seu token aqui"
+        self.__auth_token = "c05d45ec7b6cff3d9bad43dd15a8a586"
 
     ## Função para o envio do sms
     def Mensagem(self, msg):
         client = Client(self.__account_sid,self.__auth_token)
         message = client.messages \
-            .create(body=msg,from_='+18507505994',to="+5521999470170")
+            .create(body=msg,from_='number twilio here',to="your phone here")
         return message.sid
 
 """
