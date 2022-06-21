@@ -20,8 +20,8 @@ class sms:
     
     ## Inicialização da class sms pra autencicação da conta e do token do twilio
     def __init__(self):
-        self.__account_sid = "AC6486e44691fca2d1d182533e4ad3d4c6"
-        self.__auth_token = "c05d45ec7b6cff3d9bad43dd15a8a586"
+        self.__account_sid = "Coloquei seu codigo aqui"
+        self.__auth_token = "coloque seu token aqui"
 
     ## Função para o envio do sms
     def Mensagem(self, msg):
